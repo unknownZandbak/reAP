@@ -1,6 +1,6 @@
 class Pallet:
     
-    def __init__(self, itemName:str, itemCount:int, itemCapacity:int) -> None:
+    def __init__(self, itemName:str|None = None, itemCount:int = 0, itemCapacity:int = 0) -> None:
         self.itemName = itemName
         self.itemCount = itemCount
         self.itemCapacity = itemCapacity

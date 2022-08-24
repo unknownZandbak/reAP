@@ -6,7 +6,7 @@ class Shelf:
     MAX_PALLETS = 4
             
     def __init__(self) -> None:
-        self.slots = np.zeros(self.MAX_PALLETS, int)
+        self.slots: list[Pallet] = [Pallet]*4
 
     def getSlotStatus(self) -> list[bool]:
         slotStatus = self.slots != 0
@@ -17,8 +17,7 @@ class Shelf:
             return False
 
         self.slots[slot] = 0
-        return True
-        
+        return True     
 
     def insertPallet(self, slot:int, pallet:Pallet) -> bool:
         if type(self.slots[slot]) == Pallet:
