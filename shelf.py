@@ -9,7 +9,7 @@ class Shelf:
         self.pallets: list[Pallet] = [Pallet() for x in range(self.MAX_PALLETS)]
     
     def __repr__(self) -> str:
-        result = f"\nShelf ID:\t{id(self)}"
+        result = f"\n\nShelf ID:\t{id(self)}"
         for pallet in self.pallets:
             result += f"\n----\nItem Name:\t{pallet.itemName}\nItem Count:\t{pallet.itemCount}\nCapacity:\t{pallet.itemCapacity}"
         return  result

@@ -8,7 +8,7 @@ class Warehouse:
         self.shelves = shelves
 
     def __repr__(self) -> str:
-        return str(f"Employees:\n{self.employees}\nShelfs:\n{repr(self.shelves)}\n")
+        return str(f"\nEmployees: {len(self.employees)}\nShelves: {len(self.shelves)}\n\n======Employees======\n{self.employees}\n\n======Shelfs======\n{repr(self.shelves)}\n")
 
     def getEmployees(self) -> list[Employee]:
         return self.employees

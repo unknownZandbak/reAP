@@ -5,6 +5,9 @@ class Employee:
         self.busy = False
         self.forkliftCertificate = forkliftCertificate
 
+    def __repr__(self) -> str:
+        return str(f"\nName:\t{self.NAME} \nBusy:\t{self.busy} \nForkliftcertified: \t{self.forkliftCertificate}")
+
     def getName(self) -> str:
         return self.NAME
 
