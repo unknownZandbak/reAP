@@ -1,9 +1,12 @@
 class Pallet:
     
-    def __init__(self, itemName:str|None = None, itemCount:int = 0, itemCapacity:int = 0) -> None:
+    def __init__(self, itemName:str|None = None, itemCount:int = 0) -> None:
         self.itemName = itemName
         self.itemCount = itemCount
-        self.itemCapacity = itemCapacity
+        self.itemCapacity = itemCount
+
+    def __repr__(self) -> str:
+        return str(f"\nItem Name:\t{self.itemName}\nItem Count:\t{self.itemCount}\nCapacity:\t{self.itemCapacity}")
 
     def getItemName(self) -> str:
         return self.itemName
@@ -15,10 +18,11 @@ class Pallet:
         return self.itemCapacity - self.itemCount
 
     def reallocateEmptyPallet(self, itemName:str, itemCapacity:int) -> bool:
-        if self.itemCount <= 0:
+        if self.itemCount > 0:
             return False
 
         self.itemName = itemName
+        self.itemCount = itemCapacity
         self.itemCapacity = itemCapacity
         return True
     
